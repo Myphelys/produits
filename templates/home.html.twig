@@ -1,0 +1,11 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<div class="p-5 text-center h3"><h3>Bienvenue sur la page d'accueil ! :D</h3></div>
+
+    <p>
+        <ul class="list-group">
+            <li class="list-group-item">Vous souhaitez ajouter un article, c'est par ici : <a href="{{path('produit_ajout')}} " class="link-secondary">Ajouter un article</a></li>
+        </ul>
+    </p>
+{% endblock %}

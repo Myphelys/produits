@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Liste | {{parent()}}{% endblock %}
+
+{% block body %}
+
+
+        <section>
+            <h2 class="p-3">Liste des produits </h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Référence</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Date d'ajout</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for produit in produits %}
+
+                    <tr>
+                        <th scope="row">{{ produit.id }}</th>
+                        <td>{{ produit.libelle }}</td>
+                        <td>{{ produit.reference }}</td>
+                        <td>{{ produit.prix }}</td>
+                        <td>{{ produit.stock }}</td>
+                        <td>{{ produit.dateAjout|date('d-m-Y') }}</td>
+                        <td><a href="{{ path('produit_detail', {'id': produit.id}) }}"><img src="{{asset('icon/editer.png')}}" alt="modifier_produit" width="20" height="20"></a></td>
+                        <td><a href="{{ path('produit_supprimer', {'id': produit.id}) }}"><img src="{{asset('icon/supprimer.png')}}" alt="supprimer_produit" width="20" height="20"></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+
+
+{% endblock %}

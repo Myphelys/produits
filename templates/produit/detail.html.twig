@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Detail | {{parent()}}{% endblock %}
+
+{% block body %}
+
+ <h2 class="p-3">Produit - {{ produit.libelle }}</h2>
+
+ {{form_start(produitForm)}}
+ {{form_widget(produitForm)}}
+ <button class="btn btn-light">Modifier</button>
+ {{ form_end(produitForm) }}
+
+{% endblock %}
